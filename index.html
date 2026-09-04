@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MaterialDNA AI | SIH 26099</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-shell">
+<aside class="sidebar">
+  <div class="brand"><div class="brand-mark">M</div><div><h1>MaterialDNA <span>AI</span></h1><p>SIH 26099</p></div></div>
+  <div class="nav-label">WORKSPACE</div>
+  <nav>
+    <button class="nav-item active" data-page="dashboard"><span>◈</span>Dashboard</button>
+    <button class="nav-item" data-page="upload"><span>↥</span>Upload Data</button>
+    <button class="nav-item" data-page="materials"><span>▤</span>Materials</button>
+    <button class="nav-item" data-page="matching"><span>⌘</span>AI Matching</button>
+    <button class="nav-item" data-page="codes"><span>#</span>National Identity</button>
+    <button class="nav-item" data-page="validation"><span>✓</span>Validation Center</button>
+  </nav>
+  <div class="sidebar-bottom"><div class="engine-card"><i></i><div><small>AI ENGINE STATUS</small><strong>Online & Ready</strong></div></div><p>Material harmonization<br>made intelligent.</p></div>
+</aside>
+
+<main class="main">
+<header class="topbar">
+  <div><p class="eyebrow">NATIONAL MATERIAL INTELLIGENCE PLATFORM</p><h2 id="pageTitle">Command Center</h2></div>
+  <div class="top-actions"><div class="live-pill"><i></i>Live Analysis</div><button class="icon-btn" id="demoDataBtn">⚡</button><button class="profile">A <span>Admin</span></button></div>
+</header>
+
+<section id="dashboard" class="page active-page">
+<div class="hero-grid">
+ <div class="hero-copy">
+  <div class="hero-badge">● MATERIAL INTELLIGENCE 2.0</div>
+  <h1>One material.<br><em>One national identity.</em></h1>
+  <p>MaterialDNA AI identifies duplicate and near-duplicate industrial materials across organizations, preserves legacy codes, and recommends a harmonized material identity.</p>
+  <div class="hero-actions"><button class="btn primary" id="heroUpload">Upload Material Data <span>→</span></button><button class="btn secondary" id="heroDemo">Try Live Demo</button></div>
+  <div class="hero-trust"><div><b id="heroMaterials">0</b><span>Records analysed</span></div><div><b id="heroMatches">0</b><span>AI recommendations</span></div><div><b id="heroCpse">0</b><span>Organizations</span></div></div>
+ </div>
+ <div class="hero-visual">
+  <img src="assets/india-material-identity.png" alt="One Material One National Identity">
+  <div class="visual-overlay"></div>
+  <div class="scan-card scan-one"><small>AI SCAN</small><strong>6205 Bearing</strong><span>98.4% identity confidence</span></div>
+  <div class="scan-card scan-two"><i></i><span>Harmonization engine active</span></div>
+ </div>
+</div>
+
+<div class="metrics">
+ <article class="metric-card blue"><div class="metric-icon">▤</div><div><span>Total Materials</span><strong id="totalMaterials">0</strong><small>Uploaded records</small></div></article>
+ <article class="metric-card green"><div class="metric-icon">⌘</div><div><span>Duplicate Matches</span><strong id="duplicateCount">0</strong><small>AI detected pairs</small></div></article>
+ <article class="metric-card violet"><div class="metric-icon">◉</div><div><span>CPSEs Connected</span><strong id="cpseCount">0</strong><small>Unique organizations</small></div></article>
+ <article class="metric-card amber"><div class="metric-icon">✓</div><div><span>Approved Identities</span><strong id="approvedCount">0</strong><small>Human validated</small></div></article>
+</div>
+
+<div class="dashboard-grid">
+ <article class="panel network-panel"><div class="panel-head"><div><p>LIVE MAP</p><h3>Material Intelligence Network</h3></div><span class="soft-pill">Dynamic</span></div>
+ <div class="network-stage" id="networkStage"><svg viewBox="0 0 700 330" preserveAspectRatio="none"><line x1="350" y1="165" x2="130" y2="75"/><line x1="350" y1="165" x2="570" y2="75"/><line x1="350" y1="165" x2="125" y2="265"/><line x1="350" y1="165" x2="575" y2="265"/></svg><div class="network-core"><span>AI</span><b>MaterialDNA</b></div><div class="node node-a">IOCL</div><div class="node node-b">BPCL</div><div class="node node-c">HPCL</div><div class="node node-d">ONGC</div></div></article>
+ <article class="panel activity-panel"><div class="panel-head"><div><p>SYSTEM LOG</p><h3>Recent Activity</h3></div><span class="status-online">● Online</span></div><div class="activity-list" id="activityList"><div class="activity"><i>◌</i><div><b>Waiting for data</b><span>Upload a CSV to begin analysis</span></div></div><div class="activity"><i>⌘</i><div><b>Matching engine ready</b><span>Semantic + technical similarity</span></div></div></div></article>
+</div>
+</section>
+
+<section id="upload" class="page">
+ <div class="section-intro"><p class="eyebrow">DATA INGESTION</p><h1>Bring your material data into one intelligence layer.</h1><p>Upload a CSV containing <b>CPSE</b>, <b>Material Code</b>, and <b>Material Description</b>.</p></div>
+ <div class="upload-layout">
+  <div class="drop-card" id="dropZone"><div class="upload-orb">↥</div><h2>Drop your CSV here</h2><p>or choose a file from your computer</p><input type="file" id="csvFile" accept=".csv,text/csv" hidden><button class="btn primary" id="chooseFileBtn">Choose CSV File</button><p class="file-name" id="fileName">No file selected</p><button class="btn analyse-btn" id="processFile">Run AI Analysis <span>⌘</span></button><p id="uploadStatus" class="upload-status"></p></div>
+  <div class="upload-info panel"><div class="panel-head"><div><p>EXPECTED FORMAT</p><h3>Clean input. Better matching.</h3></div></div><div class="format-row"><span>1</span><div><b>CPSE</b><small>Organization name, e.g. IOCL</small></div></div><div class="format-row"><span>2</span><div><b>Material Code</b><small>Existing legacy material code</small></div></div><div class="format-row"><span>3</span><div><b>Material Description</b><small>Technical material description</small></div></div><button class="text-btn" id="loadDemoUpload">⚡ Load sample data instead</button></div>
+ </div>
+ <article class="sample-preview panel"><div class="panel-head"><div><p>SAMPLE PREVIEW</p><h3>What your data can look like</h3></div></div><pre>CPSE,Material Code,Material Description
+IOCL,IOCL-101,Deep Groove Ball Bearing 6205 SKF 25x52x15 mm
+BPCL,BPCL-501,Ball Bearing SKF 6205 25 x 52 x 15 mm
+HPCL,HPCL-202,Deep Groove Bearing 6205 SKF
+ONGC,ONGC-888,Bearing 6305 SKF 25x62x17 mm</pre></article>
+</section>
+
+<section id="materials" class="page">
+ <div class="section-intro compact"><p class="eyebrow">MATERIAL CATALOG</p><h1>Normalized material records.</h1><p>Raw descriptions are cleaned into a common representation before matching.</p></div>
+ <div class="toolbar"><div class="search-wrap"><span>⌕</span><input id="materialSearch" type="search" placeholder="Search material, code or organization"></div><span id="materialCountLabel" class="soft-pill">0 records</span></div>
+ <div class="table-card"><table><thead><tr><th>#</th><th>Organization</th><th>Legacy Code</th><th>Original Description</th><th>Normalized Identity</th></tr></thead><tbody id="materialsTable"><tr><td colspan="5" class="empty-row">No material data yet. Upload a CSV or load the demo dataset.</td></tr></tbody></table></div>
+</section>
+
+<section id="matching" class="page"><div class="section-intro compact"><p class="eyebrow">AI MATCHING ENGINE</p><h1>Discover hidden duplicates.</h1><p>Descriptions are normalized and compared using token overlap, technical numbers and material-series signals.</p></div><div class="matching-summary"><div><span>Match threshold</span><b>40%</b></div><div><span>Technical number boost</span><b>+30</b></div><div><span>Cross-organization only</span><b>Enabled</b></div></div><div id="matchesContainer" class="matches-list"><div class="empty-state">Upload data to activate the AI matching engine.</div></div></section>
+
+<section id="codes" class="page"><div class="section-intro compact"><p class="eyebrow">HARMONIZED IDENTITY</p><h1>Preserve history. Create common identity.</h1><p>Every recommendation creates a common identity while retaining all original organization codes.</p></div><div id="codeContainer" class="code-grid"><div class="empty-state">AI recommendations will appear here after analysis.</div></div></section>
+
+<section id="validation" class="page"><div class="section-intro compact"><p class="eyebrow">HUMAN-IN-THE-LOOP</p><h1>Experts make the final call.</h1><p>AI recommends. Human validators approve or reject harmonization proposals.</p></div><div id="validationContainer" class="validation-list"><div class="empty-state">No recommendations available yet.</div></div></section>
+</main>
+</div>
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
